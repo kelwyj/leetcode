@@ -1,0 +1,21 @@
+class Solution(object):
+    def deleteGreatestValue(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        lst =[]
+        
+        new = [sorted(grid[n], reverse = True) for n in range(len(grid))]
+        print new
+        print 'len(grid):',len(grid)
+        for i in range(len(new[0])):找每列的最大值 
+            lst.append(max([new[n][i] for n in range(len(new))]))
+        return sum(lst)         
+        """
+
+        new=[sorted(grid[n], reverse=True) for n in range(len(grid))]
+        print new
+        ans=0
+        for i in range(len(new[0])):
+            ans+=max([new[n][i] for n in range(len(new))])
+        return ans
